@@ -1,4 +1,5 @@
 # Django settings for lumath project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -107,11 +108,9 @@ ROOT_URLCONF = 'lumath.urls'
 # Python dotted path to the WSGI application used by Django's runserver.
 WSGI_APPLICATION = 'lumath.wsgi.application'
 
-TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -122,7 +121,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
-    'period',
+    'classroom',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
