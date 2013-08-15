@@ -1,8 +1,32 @@
 {% extends "classroom/base.html"%}
-{% block title %}hello kids{% endblock %}
+{% block title %}Mr Lu's Math Site{% endblock %}
 {% block content %}
+{% load static from staticfiles %}
 <div class="container">
-<img class="img-responsive" src="http://sphotos-a.ak.fbcdn.net/hphotos-ak-ash3/160_540395915124_1037_n.jpg"/>
-<h1>Come and learn with me!</h1>
+	<div class="carousel slide">
+		<div class="carousel-inner">
+		    <div class="item active">
+		      <img src="{% static "img/engaging.jpg" %}"/>
+	      	</div>
+	      	<div class="item">
+		      <img src="{% static "img/dedication.jpg" %}"/>
+	      	</div>
+	      	<div class="item">
+		      <img src="{% static "img/perseverance.jpg" %}"/>
+	      	</div>
+      	</div>
+	</div>
+	<div class="row">
+		<div class="span12">
+			<p class="welcome-message">
+				Welcome students! A popular, loyal, and handsome buddy of mine was kind enough to devote his time and energy into creating this site for us to use. Please take some time to thank him for all his efforts. Also be sure to check back here daily to stay updated with assignments, announcements, and test dates.
+			<p>
+		</div>
+	</div>
 </div>
+{% endblock %}
+{% block js-end %}
+<script>
+$('.carousel').carousel()
+</script>
 {% endblock %}

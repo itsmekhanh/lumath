@@ -17,8 +17,12 @@ class PeriodAdmin(admin.ModelAdmin):
     ]
     inlines = [AssignmentInline]
     list_display = ('name', 'description')
+    
+class AnnouncementAdmin(admin.ModelAdmin):
+    list_display = ('name', 'period','content', 'createtime')
+    list_filter = ['createtime']
 
 admin.site.register(Period, PeriodAdmin)
 admin.site.register(Assignment, AssignmentAdmin)
-admin.site.register(Announcement)
+admin.site.register(Announcement, AnnouncementAdmin)
 admin.site.register(Test)
