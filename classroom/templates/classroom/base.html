@@ -24,7 +24,7 @@
 	            {% endfor %}
 	      	</ul>
           </li>
-          <li><a href="{% url 'classroom:contact' %}">Contact</a></li>
+          <li {% if request.path == "/contact" %}class="active"{% endif %}><a href="{% url 'classroom:contact' %}">Contact</a></li>
         </ul>
         <h3 class="muted">Mr. Lu's Math Site</h3>
       </div>
