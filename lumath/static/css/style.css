@@ -11,3 +11,12 @@
 .dropdown-menu li{
 	margin-left: 0px;
 }
+
+#contact{
+	padding:30px;
+}
+
+#contact p{
+	padding:10px;
+	font-size: 20px;
+}
