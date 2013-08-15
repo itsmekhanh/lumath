@@ -7,3 +7,7 @@
 	font-size: 30px;
 	line-height: 34px;
 }
+
+.dropdown-menu li{
+	margin-left: 0px;
+}

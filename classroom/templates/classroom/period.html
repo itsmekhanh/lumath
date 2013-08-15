@@ -1,0 +1,65 @@
+{% extends "classroom/base.html"%}
+{% load static from staticfiles %}
+
+{% block title%}{{period.name}}{% endblock %}
+
+
+{% block content %}
+<div class="container">
+	<h2>{{period.name}}</h2>
+	<p>{{period.description}}</p>
+	
+	{% if announcements %}
+	<h2>Announcements</h2>
+	<ul>
+		{% for announcement in announcements %}
+			<p><b class="announcement-label">{{announcement.createtime | date:"M d, Y"}}</b> - {{announcement.content}}</p>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	
+	
+	{% if assignments %}
+	<h2>Assignments</h2>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Description</th>
+				<th>Due Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for assignment in assignments %}
+				<tr>
+					<td>{{ assignment.name }}</td>
+					<td>{{ assignment.content }}</td>
+					<td>{{ assignment.due_date | date:"M d, Y" }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% endif %}
+	
+	
+	{% if tests %}
+	<h2>Tests</h2>
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Test Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for test in tests %}
+				<tr>
+					<td>{{ test.name }}</td>
+					<td>{{ test.test_date | date:"M d, Y" }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% endif %}
+</div>
+{% endblock %}
