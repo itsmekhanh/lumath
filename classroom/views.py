@@ -33,8 +33,26 @@ def assignments(request, period_id):
                'period':period
     }
     return render(request, 'classroom/assignments.html', context)
-    
 
+def announcements(request, period_id):
+    period = get_object_or_404(Period, pk=period_id)
+    announcements = Announcement.objects.filter(period_id=period_id).order_by('-createtime')
+    
+    context = {
+               'announcements': announcements,
+               'period':period
+    }
+    return render(request, 'classroom/announcements.html', context)
+
+def tests(request, period_id):
+    period = get_object_or_404(Period, pk=period_id)
+    tests = Test.objects.filter(period_id=period_id).order_by('test_date')
+    
+    context = {
+               'tests': tests,
+               'period':period
+    }
+    return render(request, 'classroom/tests.html', context)
 
 
                       
