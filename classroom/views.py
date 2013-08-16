@@ -9,9 +9,9 @@ def period(request, period_id):
     time = datetime.today() - timedelta(days=1)
     
     period = get_object_or_404(Period, pk=period_id)
-    announcements = Announcement.objects.filter(period_id=period_id).reverse().order_by('-createtime')[:5]                            
-    assignments = Assignment.objects.filter(period_id=period_id).reverse().order_by('-due_date')[:5]
-    tests = Test.objects.filter(period_id=period_id).reverse().order_by('-test_date')[:5]
+    announcements = Announcement.objects.filter(period_id=period_id).reverse().order_by('-createtime')[:10]                            
+    assignments = Assignment.objects.filter(period_id=period_id).reverse().order_by('-due_date')[:10]
+    tests = Test.objects.filter(period_id=period_id).reverse().order_by('-test_date')[:10]
     
     context = {
                 'period':period,
