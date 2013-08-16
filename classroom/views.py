@@ -24,5 +24,16 @@ def period(request, period_id):
 
 def contact(request):
     return render(request, 'classroom/contact.html')
+
+def allAssignments(request, period_id):
+    assignments = Assignment.objects.filter(period_id=period_id).order_by('due_date')
+    context = {
+               'assignments': assignments
+    }
+    return render(request, 'classroom/assignments.html', context)
+    
+
+
+
                       
     
