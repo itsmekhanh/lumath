@@ -1,0 +1,19 @@
+{% extends "classroom/base.html"%}
+{% load static from staticfiles %}
+
+{% block title %}Announcements for {{period.name}}{% endblock %}
+
+{% block content %}
+<div class="container">
+	{% if announcements %}
+	<h2>Announcements for <a href="{% url 'classroom:period' period.id %}">{{period.name}}</a> </h2>
+	<ul>
+		{% for announcement in announcements %}
+			<p><b class="announcement-label">{{announcement.createtime | date:"M d, Y"}}</b> - {{announcement.content}}</p>
+		{% endfor %}
+	</ul>
+	{% else %}
+		<p>There are currently no announcements for {{period.name }}</p>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "classroom/base.html"%}
+{% load static from staticfiles %}
+
+{% block title %}Tests for {{period.name}}{% endblock %}
+
+{% block content %}
+<div class="container">
+	{% if tests %}
+	<h2>Tests for <a href="{% url 'classroom:period' period.id %}">{{period.name}}</a></h2>
+	<table class="table table-bordered table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Test Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for test in tests %}
+				<tr>
+					<td>{{ test.name }}</td>
+					<td>{{ test.test_date | date:"M d, Y" }}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	{% else %}
+	<p>There are currently no tests scheduled for {{period.name }}</p>
+	{% endif %}
+</div>
+{% endblock %}
