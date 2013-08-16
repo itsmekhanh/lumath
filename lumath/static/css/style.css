@@ -1,5 +1,17 @@
+body{
+	background-image:url('../img/debut_light.png');
+	
+}
+
 .announcement-label{
 	color: gray;
+}
+
+.container-border{
+	background-color: white;
+	padding:20px;
+	border-radius: 8px;
+	box-shadow: 0 0 2px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2);
 }
 
 .welcome-message{

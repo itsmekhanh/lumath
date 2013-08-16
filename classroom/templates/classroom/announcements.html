@@ -4,7 +4,7 @@
 {% block title %}Announcements for {{period.name}}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="container container-border">
 	{% if announcements %}
 	<h2>Announcements for <a href="{% url 'classroom:period' period.id %}">{{period.name}}</a> </h2>
 	<ul>

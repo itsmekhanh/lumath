@@ -26,10 +26,11 @@
           </li>
           <li {% if request.path == "/contact" %}class="active"{% endif %}><a href="{% url 'classroom:contact' %}">Contact</a></li>
         </ul>
-        <h3 class="muted">Mr. Lu's Math Site</h3>
+        <h3>Mr. Lu's Math Site</h3>
       </div>
+      
 </div>
-  {% block content %}{% endblock %}
+{% block content %}{% endblock %}
 </body>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
